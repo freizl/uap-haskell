@@ -36,17 +36,38 @@ library
     Web.UAParser
 
   build-depends:
-      base             < 5
-    , bytestring
-    , text
-    , pcre-light
-    , yaml             >= 0.8.3
-    , aeson            >= 0.7
-    , data-default
-    , file-embed       < 0.1
+                  base             < 5
+                , aeson            >= 0.7
+                , bytestring
+                , data-default
+                , directory >= 1.3.3.0
+                , file-embed       < 0.1
+                , pcre-light
+                , text
+                , yaml             >= 0.8.3
 
   if flag(lib-Werror)
     ghc-options: -Werror
+
+  ghc-options: -Wall
+
+Executable foo
+  main-is:             Foo.hs
+  hs-source-dirs:      test
+  default-language:    Haskell2010
+  build-depends:       aeson
+                     , base              >= 4.5    && < 5
+                     , bytestring
+                     , cassava
+                     , containers
+                     , data-default
+                     , directory >= 1.3.3.0
+                     , file-embed
+                     , pcre-light
+                     , text
+                     , ua-parser
+                     , vector
+                     , yaml
 
   ghc-options: -Wall
 
